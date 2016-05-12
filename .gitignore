@@ -61,3 +61,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/OOP/DrawingWithFactrory/nbproject/private/
+/OOP/DrawingWithFactrory/build/
+/Learning/TestFX/nbproject/private/
