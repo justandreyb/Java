@@ -5,34 +5,47 @@ import java.util.HashMap;
 
 public abstract class Automobile implements Serializable {
 
-    protected HashMap<String, String> carCharacteristics = new HashMap<>();
+    protected HashMap<String, String> automobileCharacteristics = new HashMap<>();
 
-    public Automobile () {
-        carCharacteristics.put("Manufacturer", "-");
-        carCharacteristics.put("Model", "-");
-        carCharacteristics.put("Drive", "-");
-        carCharacteristics.put("Power", "-");
-        carCharacteristics.put("Manufacturer", "-");
-        carCharacteristics.put("Manufacturer", "-");
+    public Automobile() {
+
+        automobileCharacteristics.put("Manufacturer", "-");
+        automobileCharacteristics.put("Model", "-");
+        automobileCharacteristics.put("Drive", "-");
+        automobileCharacteristics.put("Power", "-");
+        automobileCharacteristics.put("EngineType", "-");
+        automobileCharacteristics.put("AxleCount", "-");
     }
 
-    public Automobile (HashMap carCharacteristics) {
-        this.carCharacteristics.putAll(carCharacteristics);
+    public Automobile(HashMap<String, String> automobileCharacteristics) {
+
+        setAutomobileCharacteristics(automobileCharacteristics);
     }
 
-    public HashMap getInformation() {
-        return this.carCharacteristics;
+    public HashMap getAutomobileCharacteristics() {
+
+        return this.automobileCharacteristics;
+    }
+
+    public void setAutomobileCharacteristics(HashMap<String, String> automobileCharacteristics) {
+
+        this.automobileCharacteristics.putAll(automobileCharacteristics);
+    }
+
+    public void showAutomobileCharacteristics(/*Variant : HashMap<String, String> automobileCharacteristics*/) {
+
+        /*Print characteristics in table*/
     }
 
     protected String getName() throws Exception {
 
         try {
-            String name = carCharacteristics.get("Manufacturer") + carCharacteristics.get("Model");
+            String name = automobileCharacteristics.get("Manufacturer") + automobileCharacteristics.get("Model");
             if (name.contains("\\") || name.contains("/") || name.contains("*") ||
                     name.contains("?") || name.contains("<") ||
                     name.contains(">") || name.contains("|") ||
                     name.contains("\"")) {
-                name.replaceAll("[/*?<>|\"]", "");
+                name = name.replaceAll("[/*?<>|\"]", "");
                 if (name.equals(""))
                     name = "untitled";
             }
@@ -60,17 +73,18 @@ public abstract class Automobile implements Serializable {
         }
     }
 
-    public void openObject(String objectName) throws Exception {
+    public static Automobile openObject(String objectName) throws Exception {
 
         try {
             FileInputStream fileInputStream = new FileInputStream(System.getProperty("user.dir") +
                     "\\SavedObjects\\" + objectName + ".out");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
-            this = (Automobile) objectInputStream.readObject();
+            return (Automobile) objectInputStream.readObject();
 
         }
         catch (Exception exception) {
             System.out.println("Error : " + exception);
+            return null;
         }
     }
 
