@@ -1,4 +1,8 @@
 package com.Controller;
 
-public class AutomobileCreator {
+import com.Model.Automobiles.Automobile;
+
+public interface AutomobileCreator {
+
+    Automobile createAutomobile(String automobileName);
 }
