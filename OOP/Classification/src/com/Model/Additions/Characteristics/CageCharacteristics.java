@@ -9,8 +9,8 @@ public class CageCharacteristics extends Characteristics {
     public CageCharacteristics() {
 
         HashMap<String, String> characteristics = new HashMap<>();
-        characteristics.put("Manufacturer", "-");
-        characteristics.put("Validity", "-");
+        characteristics.put("CageManufacturer", "-");
+        characteristics.put("CageValidity", "-");
         this.setCharacteristics(characteristics);
     }
 

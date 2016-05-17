@@ -1,7 +1,22 @@
 package com.Model.Additions;
 
-/**
- * Created by Андрей on 15.05.2016.
- */
-public class Mediaplayer {
+import com.Model.Additions.Characteristics.MediaplayerCharacteristics;
+import com.Model.Characteristics.Characteristics;
+
+import java.util.HashMap;
+
+public class Mediaplayer extends Additions {
+
+    public Characteristics characteristics;
+
+    public Mediaplayer() {
+
+        this.characteristics = new MediaplayerCharacteristics();
+    }
+
+    public Mediaplayer(HashMap<String, String> characteristics) {
+
+        this.characteristics = new MediaplayerCharacteristics(characteristics);
+    }
+
 }

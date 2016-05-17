@@ -5,7 +5,7 @@ import java.util.HashMap;
 import com.Model.Additions.Characteristics.CageCharacteristics;
 import com.Model.Characteristics.Characteristics;
 
-public class SafetyCage {
+public class SafetyCage extends Additions {
 
     public Characteristics characteristics;
 
@@ -17,10 +17,6 @@ public class SafetyCage {
     public SafetyCage(HashMap<String, String> characteristics) {
 
         this.characteristics = new CageCharacteristics(characteristics);
-    }
-
-    public void getInformation() {
-        //show info about cage
     }
 
 }

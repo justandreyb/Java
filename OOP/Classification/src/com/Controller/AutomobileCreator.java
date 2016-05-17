@@ -2,7 +2,11 @@ package com.Controller;
 
 import com.Model.Automobiles.Automobile;
 
-public interface AutomobileCreator {
+import java.util.HashMap;
 
-    Automobile createAutomobile(String automobileName);
+public interface AutomobileCreator{
+
+    Automobile createAutomobile(String automobileName) throws Exception;
+    Automobile createAutomobile(String automobileName, HashMap<String, String> characteristics) throws Exception;
+
 }

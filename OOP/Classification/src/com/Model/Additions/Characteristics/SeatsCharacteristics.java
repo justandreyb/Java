@@ -1,7 +1,21 @@
 package com.Model.Additions.Characteristics;
 
-/**
- * Created by Андрей on 15.05.2016.
- */
-public class SeatsCharacteristics {
+import com.Model.Characteristics.Characteristics;
+
+import java.util.HashMap;
+
+public class SeatsCharacteristics extends Characteristics {
+
+    public SeatsCharacteristics() {
+
+        HashMap<String, String> characteristics = new HashMap<>();
+        characteristics.put("SeatsCount", "-");
+        this.setCharacteristics(characteristics);
+    }
+
+    public SeatsCharacteristics(HashMap<String, String> characteristics) {
+
+        this.setCharacteristics(characteristics);
+    }
+
 }

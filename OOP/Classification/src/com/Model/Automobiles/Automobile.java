@@ -1,46 +1,28 @@
 package com.Model.Automobiles;
 
+import com.Model.Characteristics.Characteristics;
+
 import java.io.*;
 import java.util.HashMap;
 
 public abstract class Automobile implements Serializable {
 
-    protected HashMap<String, String> automobileCharacteristics = new HashMap<>();
+    public Characteristics characteristics;
 
     public Automobile() {
 
-        automobileCharacteristics.put("Manufacturer", "-");
-        automobileCharacteristics.put("Model", "-");
-        automobileCharacteristics.put("Drive", "-");
-        automobileCharacteristics.put("Power", "-");
-        automobileCharacteristics.put("EngineType", "-");
-        automobileCharacteristics.put("AxleCount", "-");
+        this.characteristics = new AutomobilesCharacteristics();
     }
 
-    public Automobile(HashMap<String, String> automobileCharacteristics) {
+    public Automobile(HashMap<String, String> characteristics) {
 
-        setAutomobileCharacteristics(automobileCharacteristics);
-    }
-
-    public HashMap getAutomobileCharacteristics() {
-
-        return this.automobileCharacteristics;
-    }
-
-    public void setAutomobileCharacteristics(HashMap<String, String> automobileCharacteristics) {
-
-        this.automobileCharacteristics.putAll(automobileCharacteristics);
-    }
-
-    public void showAutomobileCharacteristics(/*Variant : HashMap<String, String> automobileCharacteristics*/) {
-
-        /*Print characteristics in table*/
+        this.characteristics = new AutomobilesCharacteristics(characteristics);
     }
 
     protected String getName() throws Exception {
 
         try {
-            String name = automobileCharacteristics.get("Manufacturer") + automobileCharacteristics.get("Model");
+            String name = characteristics.getCharacteristic("Manufacturer") + characteristics.getCharacteristic("Model");
             if (name.contains("\\") || name.contains("/") || name.contains("*") ||
                     name.contains("?") || name.contains("<") ||
                     name.contains(">") || name.contains("|") ||
@@ -86,6 +68,10 @@ public abstract class Automobile implements Serializable {
             System.out.println("Error : " + exception);
             return null;
         }
+    }
+
+    public void getInformation() {
+        //Get all info
     }
 
 }
