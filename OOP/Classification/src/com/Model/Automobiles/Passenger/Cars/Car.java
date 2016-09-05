@@ -1,10 +1,17 @@
 package com.Model.Automobiles.Passenger.Cars;
 
-import com.Model.Additions.Wheels;
 import com.Model.Automobiles.Passenger.Passenger;
 
 public class Car extends Passenger{
 
-    public Wheels wheel;
+    private int wheelsSize;
+
+    public void setWheelsSize(int wheelsSize) {
+        this.wheelsSize = wheelsSize;
+    }
+
+    public int getWheelsSize() {
+        return this.wheelsSize;
+    }
 
 }

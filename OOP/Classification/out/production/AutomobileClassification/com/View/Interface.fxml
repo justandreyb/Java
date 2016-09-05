@@ -1,11 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
-
-<GridPane fx:controller="com.Controller.InterfaceController" xmlns:fx="http://javafx.com/fxml" alignment="CENTER" hgap="10" vgap="10" >
-    <Button text="Say Hello World" onAction="#getHello" />
-    <Label GridPane.rowIndex="1" fx:id="helloWorld"/>
-</GridPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.Controller.InterfaceController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="btnClose" mnemonicParsing="false" onAction="#clickBtnClose" text="Close" />
+                  <MenuItem fx:id="btnSaveSelected" mnemonicParsing="false" onAction="#saveCurrentObject" text="Save this list" />
+                  <MenuItem fx:id="btnOpenCreated" mnemonicParsing="false" onAction="#openCreatedObject" text="Open list" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem fx:id="btnAbout" mnemonicParsing="false" onAction="#getAbout" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <SplitPane dividerPositions="0.205685618729097" prefHeight="375.0" prefWidth="600.0" scaleShape="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <VBox layoutY="286.0" prefHeight="22.0" prefWidth="119.0" spacing="0.5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button fx:id="btnSelect" layoutX="1.0" layoutY="313.0" mnemonicParsing="false" onAction="#selectCurrentAutomobile" prefHeight="25.0" prefWidth="118.0" text="Select" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </VBox>
+                        <ListView fx:id="automobilesList" layoutX="-12.0" layoutY="24.0" prefHeight="314.0" prefWidth="119.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children></AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <Label layoutX="84.0" layoutY="14.0" prefHeight="18.0" prefWidth="123.0" text="Characteristics for" AnchorPane.leftAnchor="84.0" AnchorPane.rightAnchor="236.0" AnchorPane.topAnchor="14.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="167.0" layoutY="60.0" prefHeight="190.0" prefWidth="139.0" spacing="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="60.0">
+                           <children>
+                              <Label fx:id="idManufacturer" layoutX="159.0" layoutY="60.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="idModel" layoutX="159.0" layoutY="83.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="idPower" layoutX="159.0" layoutY="105.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="idYear" layoutX="160.0" layoutY="124.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="idAdditionalFirst" layoutX="160.0" layoutY="154.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="idAdditionalSecond" layoutX="160.0" layoutY="162.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="idAdditionalThird" layoutX="159.0" layoutY="184.0" text="Not set">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                               <Label fx:id="idAdditionalFourth" layoutX="159.0" layoutY="184.0" text="Not set">
+                                   <font>
+                                       <Font size="14.0" />
+                                   </font>
+                               </Label>
+                           </children>
+                        </VBox>
+                        <Label fx:id="idTYPE" layoutX="246.0" layoutY="14.0" text="TYPE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <Pane prefHeight="30.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="195.0" layoutY="2.0" spacing="15.0">
+               <children>
+                  <Button fx:id="btnAdd" layoutX="190.0" layoutY="2.0" mnemonicParsing="false" onAction="#addNewAutomobile" text="Add ..." />
+                  <Button fx:id="btnEdit" layoutX="274.0" layoutY="2.0" mnemonicParsing="false" onAction="#editCurrentAutomobile" text="Edit ..." />
+                  <Button fx:id="btnDelete" layoutX="357.0" layoutY="2.0" mnemonicParsing="false" onAction="#deleteCurrentAutomobile" text="Delete" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DisplacementMap>
+                     <mapData>
+                        <FloatMap />
+                     </mapData>
+                  </DisplacementMap>
+               </effect>
+               <padding>
+                  <Insets bottom="1.0" left="2.0" right="2.0" top="1.0" />
+               </padding>
+            </HBox>
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

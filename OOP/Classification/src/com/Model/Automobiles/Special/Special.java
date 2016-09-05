@@ -1,9 +1,24 @@
 package com.Model.Automobiles.Special;
 
-import com.Model.Automobiles.Automobile;
+import com.Model.Automobile;
 
-public class Special extends Automobile{
+public class Special extends Automobile {
 
-    public static void main(String[] args) throws Exception {
+    private String serviceName;
+
+    public Special() {
+
+        initialize();
+
+        setServiceName("-");
+        this.addCharacteristic(getServiceName());
     }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+    public String getServiceName() {
+        return this.serviceName;
+    }
+
 }

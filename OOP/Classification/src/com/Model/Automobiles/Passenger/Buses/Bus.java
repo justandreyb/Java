@@ -1,10 +1,16 @@
 package com.Model.Automobiles.Passenger.Buses;
 
-import com.Model.Additions.Seats;
 import com.Model.Automobiles.Passenger.Passenger;
 
 public class Bus extends Passenger{
 
-    public Seats seats;
+    private int countOfSeats;
+
+    public void setCountOfSeats(int countOfSeats) {
+        this.countOfSeats = countOfSeats;
+    }
+    public int getCountOfSeats() {
+        return this.countOfSeats;
+    }
 
 }
