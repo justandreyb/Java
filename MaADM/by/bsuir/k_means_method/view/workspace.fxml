@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<AnchorPane maxHeight="600.0" maxWidth="600.0" minHeight="600.0" minWidth="600.0" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="by.bsuir.k_means_method.controller.WorkspaceController">
+   <children>
+      <BorderPane layoutX="188.0" layoutY="84.0" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <center>
+            <Canvas fx:id="paintField" height="545.0" width="599.0" BorderPane.alignment="CENTER" />
+         </center>
+         <top>
+            <AnchorPane prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="14.0" layoutY="17.0" text="Dots" AnchorPane.leftAnchor="15.0" />
+                  <TextField fx:id="dots" layoutX="60.0" layoutY="12.0" prefHeight="20.0" prefWidth="80.0" />
+                  <Label layoutX="153.0" layoutY="16.0" text="Classes" />
+                  <Button fx:id="buttonPaint" layoutX="524.0" layoutY="12.0" mnemonicParsing="false" onAction="#handlePaint" prefHeight="25.0" prefWidth="93.0" text="Paint" AnchorPane.rightAnchor="15.0" />
+                  <TextField fx:id="classes" layoutX="218.0" layoutY="12.0" prefHeight="25.0" prefWidth="82.0" />
+               </children>
+            </AnchorPane>
+         </top>
+      </BorderPane>
+   </children>
+</AnchorPane>
